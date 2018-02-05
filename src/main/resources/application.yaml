@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8080}
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: soccer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      default-binder: rabbit
+      bindings:
+        input:
+          destination: goal
+          binder: rabbit1
+          group: group1
+        output:
+          destination: goal
+          binder: rabbit1
+          producer:
+            requiredGroups: group1
