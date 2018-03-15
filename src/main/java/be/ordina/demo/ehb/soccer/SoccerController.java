@@ -3,7 +3,6 @@ package be.ordina.demo.ehb.soccer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,11 +19,11 @@ public class SoccerController {
         this.forward = forward;
     }
 
-    @PostMapping("/kick")
-    public ResponseEntity<Void> penalty(){
+    @GetMapping
+    public ResponseEntity<String> penalty(){
         forward.kick();
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("kicked!");
     }
 
     @GetMapping("/results")

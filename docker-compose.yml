@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  soccer:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - RABBIT_HOST=rabbit
+    depends_on:
+      - rabbit
+    ports:
+     - 8080
+
+  rabbit:
+    image: rabbitmq

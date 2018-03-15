@@ -14,7 +14,7 @@ public class Goal {
     public Goal(final InputChannels inputChannels,
                 final OutputChannels outputChannels) {
         this.goal = inputChannels.input();
-        this.target = outputChannels.output;
+        this.target = outputChannels.output();
     }
 
     /**
