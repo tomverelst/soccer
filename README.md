@@ -33,7 +33,27 @@ After the application has successfully been built,
 the application can be packaged with Docker.
 
 ```
-docker build -t <imagename> .
+$ docker build -t <imagename> .
 ```
+
+## Running the application
+
+Start rabbitmq and the application with Docker Compose:
+
+```
+$ docker-compose up -d
+```
+
+To stop everything, run the following command::
+
+```
+$ docker-compose down
+```
+
+## Endpoints
+
+- `GET /`: Kick the ball
+- `GET /results`: Returns the result as JSON  
+
 
 
